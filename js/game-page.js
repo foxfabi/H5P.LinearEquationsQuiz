@@ -1,7 +1,7 @@
 /**
  * Defines the H5P.LinearEquationsQuiz.GamePage class
  */
-H5P.LinearEquationsQuiz.GamePage = (function ($, UI, EquationType, Fractions, QuestionsGenerator) {
+H5P.LinearEquationsQuiz.GamePage = (function ($, UI, EquationType, QuestionsGenerator) {
 
   /**
    * Creates a new GamePage instance
@@ -9,22 +9,22 @@ H5P.LinearEquationsQuiz.GamePage = (function ($, UI, EquationType, Fractions, Qu
    * @class
    * @augments H5P.EventDispatcher
    * @namespace H5P
-   * @param  {equationType} type
-   * @param  {boolean} f use fractions in equations
+   * @param  {equationType} equationType
+   * @param  {boolean} useFractions use fractions in equations
    * @param  {number} maxValue Maximum number for value in operations
    * @param  {number} maxQuestions Maximum number of questions
    * @param  {Object} t Object containing translation texts
    * @param {number} id Unique id to identify this quiz
    * @fires H5P.XAPIEvent
    */
-  function GamePage(type, f, maxQuestions, maxValue, t, id) {
+  function GamePage(equationType, useFractions, maxValue, maxQuestions, t, id) {
     H5P.EventDispatcher.call(this);
-
+    //console.log("Constructor: " + useFractions + "/" + maxValue + "/" + maxQuestions);
     var self = this;
     self.id = id;
     self.translations = t;
-    self.type = type;
-    self.fractions = f;
+    self.type = equationType;
+    self.useFractions = useFractions;
     self.maxValue = maxValue;
     self.maxQuestions = maxQuestions;
     self.sliding = false;
@@ -33,7 +33,7 @@ H5P.LinearEquationsQuiz.GamePage = (function ($, UI, EquationType, Fractions, Qu
       'class': 'h5p-baq-game counting-down'
     });
 
-    self.questionsGenerator = new QuestionsGenerator(self.type, self.fractions, self.maxValue, self.maxQuestions);
+    self.questionsGenerator = new QuestionsGenerator(self.type, self.useFractions, self.maxValue, self.maxQuestions);
     self.score = 0;
     self.scoreWidget = new ScoreWidget(t);
     self.scoreWidget.appendTo(self.$gamepage);
@@ -467,4 +467,4 @@ H5P.LinearEquationsQuiz.GamePage = (function ($, UI, EquationType, Fractions, Qu
   Alternative.prototype.constructor = Alternative;
 
   return GamePage;
-})(H5P.jQuery, H5P.JoubelUI, H5P.LinearEquationsQuiz.EquationType, H5P.LinearEquationsQuiz.UseFractions, H5P.LinearEquationsQuiz.QuestionsGenerator);
+})(H5P.jQuery, H5P.JoubelUI, H5P.LinearEquationsQuiz.EquationType, H5P.LinearEquationsQuiz.QuestionsGenerator);

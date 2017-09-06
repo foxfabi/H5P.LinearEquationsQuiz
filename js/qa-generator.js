@@ -1,7 +1,7 @@
 /**
  * Defines the H5P.LinearEquationsQuiz.QuestionsGenerator class
  */
-H5P.LinearEquationsQuiz.QuestionsGenerator = (function (EquationType, UseFractions) {
+H5P.LinearEquationsQuiz.QuestionsGenerator = (function (EquationType) {
   
   var unknown = ["x", "y", "z", "a", "b"];
   var Fraction = algebra.Fraction;
@@ -24,13 +24,18 @@ H5P.LinearEquationsQuiz.QuestionsGenerator = (function (EquationType, UseFractio
    * @method QuestionsGenerator
    * @constructor
    * @param  {H5P.LinearEquationsQuiz.EquationType}   type
-   * @param  {boolean} f use fractions in equations
-   * @param  {number}           maxValue
-   * @param  {number}           maxQuestions
+   * @param  {boolean} useFractions
+   * @param  {number}  maxValue
+   * @param  {number}  maxQuestions
+   *
+   * new QuestionsGenerator(self.type, self.useFractions, self.maxValue, self.maxQuestions);
    */
-  function QuestionsGenerator(type, useFractions, maxQuestions, maxValue) {
+  function QuestionsGenerator(type, useFractions, maxValue, maxQuestions) {
     var self = this;
     var questions = [];
+    //console.log("Fractions:"+useFractions);
+    //console.log("maxValue:"+maxValue);
+    //console.log("maxQuestions:"+maxQuestions);
 
     /**
      * Generates equation type for a question
@@ -44,7 +49,8 @@ H5P.LinearEquationsQuiz.QuestionsGenerator = (function (EquationType, UseFractio
       var number = undefined;
       var equation = undefined;
       var solution = undefined;
-      //console.log(EquationType);
+      console.log(EquationType);
+      console.log(useFractions);
       switch (EquationType) {
         case "basic":
           // [ 3x = 12 ]
@@ -119,10 +125,10 @@ H5P.LinearEquationsQuiz.QuestionsGenerator = (function (EquationType, UseFractio
           }          
           break;
       }
-      //console.log(".......................");
-      //console.log(equation.toString());
+      console.log(".......................");
+      console.log(equation.toString());
       //console.log(solution.toString());
-      //console.log(".......................");
+      console.log(".......................");
       if (solution.toString() === "0") {
         // rebuild
         equation = generateEquation(item, EquationType, useFractions);
@@ -190,7 +196,7 @@ H5P.LinearEquationsQuiz.QuestionsGenerator = (function (EquationType, UseFractio
     for (i=50; i>=0; i--) {
       for (j=i; j>=0; j--) {
         var item = unknown[Math.floor(Math.random()*unknown.length)];
-        var equation = generateEquation(item, type, UseFractions);
+        var equation = generateEquation(item, type, useFractions);
         var solution = equation.solveFor(item);
         //console.log(equation.toString());
         //console.log("---------------------------------");
@@ -211,7 +217,7 @@ H5P.LinearEquationsQuiz.QuestionsGenerator = (function (EquationType, UseFractio
 
     // Create alternatives
     for (var i = 0; i < questions.length; i++) {
-      generateAlternatives(questions[i], type, UseFractions, maxValue);
+      generateAlternatives(questions[i], type, useFractions, maxValue);
     }
 
     /**
@@ -225,4 +231,4 @@ H5P.LinearEquationsQuiz.QuestionsGenerator = (function (EquationType, UseFractio
   }
 
   return QuestionsGenerator;
-}(H5P.LinearEquationsQuiz.EquationType, H5P.LinearEquationsQuiz.UseFractions));
+}(H5P.LinearEquationsQuiz.EquationType));

@@ -23,7 +23,7 @@ H5P.LinearEquationsQuiz = (function ($, UI) {
     self.options = $.extend(true, {}, {
       intro: '',
       equationType: 'addition',
-      useFractions: true,
+      useFractions: undefined,
       maxValue: undefined,
       maxQuestions: undefined,
       UI: {
@@ -39,10 +39,6 @@ H5P.LinearEquationsQuiz = (function ($, UI) {
         incorrectText: 'Incorrect. Correct answer was :num',
         durationLabel: 'Duration in hours, minutes and seconds.',
         humanizedQuestion: 'What does :arithmetic equal?',
-        plusOperator: 'plus',
-        minusOperator: 'minus',
-        multiplicationOperator: 'times',
-        divisionOperator: 'divided by',
         slideOfTotal: 'Slide :num of :total'
       }
     }, options);
@@ -143,14 +139,13 @@ H5P.LinearEquationsQuiz = (function ($, UI) {
 })(H5P.jQuery, H5P.JoubelUI);
 
 /**
- * Enum defining the different arithmetic types
+ * Enum defining the different equation types
  * @readonly
  * @enum {string}
  */
 H5P.LinearEquationsQuiz.equationType = {
   BASIC: 'basic',
   INTERMEDIATE: 'intermediate',
-  ADVANCED: 'advanced',
-  PROFESSIONAL: 'professional'
+  ADVANCED: 'advanced'
 };
-H5P.LinearEquationsQuiz.UseFractions = true;
+//H5P.LinearEquationsQuiz.UseFractions = true;
