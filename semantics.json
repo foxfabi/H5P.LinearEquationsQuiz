@@ -1,0 +1,123 @@
+[
+  {
+    "name": "intro",
+    "type": "text",
+    "label": "Intro",
+    "importance": "high",
+    "description": "The intro text (maximum 100 characters)",
+    "maxLength": 100,
+    "optional": true
+  },
+  {
+    "name": "equationType",
+    "type": "select",
+    "label": "Equation type",
+    "importance": "high",
+    "options": [
+      {
+        "value": "basic",
+        "label": "Basic [ 3x = 12 ]"
+      },
+      {
+        "value": "intermediate",
+        "label": "Intermediate [ 4x - 3 = 13 ]"
+      },
+      {
+        "value": "advanced",
+        "label": "Advanced [ 5x + 3 = 3x + 15 ]"
+      }
+    ],
+    "default": "intermediate"
+  },  
+  {
+    "name": "useFractions",
+    "type": "boolean",
+    "label": "Enable fractions",
+    "description": "Enable to allow fractions in equations.",
+    "default": true
+  },
+  {
+    "name": "maxValue",
+    "type": "number",
+    "label": "Max value for operations",
+    "importance": "medium",
+    "default": 8,
+    "min": 2,
+    "max": 20
+  },
+  {
+    "name": "maxQuestions",
+    "type": "number",
+    "label": "Max number of questions",
+    "importance": "medium",
+    "default": 20,
+    "min": 2,
+    "max": 50
+  },
+  {
+    "name": "UI",
+    "type": "group",
+    "label": "User interface translations",
+    "importance": "low",
+    "common": true,
+    "fields": [
+      {
+        "name": "score",
+        "type": "text",
+        "label": "Scoring during quiz",
+        "importance": "low",
+        "default": "Score:"
+      },
+      {
+        "name": "scoreOnResultPage",
+        "type": "text",
+        "label": "Scoring on result page",
+        "importance": "low",
+        "default": "Score: @score / @maxScore"
+      },
+      {
+        "name": "time",
+        "type": "text",
+        "label": "Time",
+        "importance": "low",
+        "default": "Time: @time"
+      },
+      {
+        "name": "resultPageHeader",
+        "type": "text",
+        "label": "Result page header",
+        "importance": "low",
+        "default": "Finished!"
+      },
+      {
+        "name": "go",
+        "type": "text",
+        "label": "Go label",
+        "importance": "low",
+        "default": "GO!"
+      },
+      {
+        "name": "startButton",
+        "type": "text",
+        "label": "Start button label",
+        "importance": "low",
+        "default": "Start"
+      },
+      {
+        "name": "retryButton",
+        "type": "text",
+        "label": "Retry button label",
+        "importance": "low",
+        "default": "Retry"
+      },
+      {
+        "name": "slideOfTotal",
+        "type": "text",
+        "label": "Slide number text",
+        "importance": "low",
+        "description": "Announces current slide and total number of slides, variables are :num and :total",
+        "default": "Slide :num of :total"
+      }
+    ]
+  }
+]

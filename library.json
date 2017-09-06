@@ -1,0 +1,66 @@
+{
+  "title": "Linear Equations Quiz",
+  "description": "Linear equations quiz containing addition, division, multiplication and subtraction",
+  "majorVersion": 1,
+  "minorVersion": 0,
+  "patchVersion": 0,
+  "runnable": 1,
+  "author": "Fabian Dennler (foxfabi)",
+  "license": "MIT",
+  "machineName": "H5P.LinearEquationsQuiz",
+  "fullscreen": 0,
+  "embedTypes": [
+    "iframe"
+  ],
+  "preloadedJs": [
+    {
+      "path": "js/algebra.min.js"
+    },
+    {
+      "path": "js/equation-quiz.js"
+    },
+    {
+      "path": "js/sound-effects.js"
+    },
+    {
+      "path": "js/countdown-widget.js"
+    },
+    {
+      "path": "js/timer-widget.js"
+    },
+    {
+      "path": "js/intro-page.js"
+    },
+    {
+      "path": "js/qa-generator.js"
+    },
+    {
+      "path": "js/game-page.js"
+    },
+    {
+      "path": "js/result-page.js"
+    }
+  ],
+  "preloadedCss": [
+    {
+      "path": "css/equation-quiz.css"
+    }
+  ],
+  "preloadedDependencies": [
+    {
+      "machineName": "H5P.JoubelUI",
+      "majorVersion": 1,
+      "minorVersion": 2
+    },
+    {
+      "machineName": "H5P.SoundJS",
+      "majorVersion": 1,
+      "minorVersion": 0
+    },
+    {
+      "machineName": "Odometer",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
+  ]
+}

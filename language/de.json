@@ -1,0 +1,67 @@
+{
+  "semantics":[
+    {
+      "label":"Einleitung",
+      "description":"Den Einleitungstext (maximal 100 Zeichen)"
+    },
+    {
+      "label":"Gleichungstyp",
+      "options":[
+        {
+          "label":"Einfach [ 3x = 12 ]"
+        },
+        {
+          "label":"Mittlere [ 4x - 3 = 13 ]"
+        },
+        {
+          "label":"Fortgeschrittene [ 5x + 3 = 3x + 15 ]"
+        }
+      ],
+      "default":"intermediate"
+    },
+    {
+      "label":"Bruchzahlen verwenden",
+      "description":"Aktivieren, um Brüche in Gleichungen zu erlauben."
+    },
+    {
+      "label":"Maximaler Wert für Berehnungen"
+    },
+    {
+      "label":"Maximale Anzahl von Fragen"
+    },
+    {
+      "label":"Übersetzungen der Benutzeroberfläche",
+      "fields":[
+        {
+          "label":"Wertung während des Quiz",
+          "default":"Ergebnis:"
+        },
+        {
+          "label":"Zeit",
+          "default":"Zeit: @time"
+        },
+        {
+          "label":"Kopfzeile der Ergebnisseite",
+          "default":"Erledigt!"
+        },
+        {
+          "label":"Start Beschriftung",
+          "default":"Start!"
+        },
+        {
+          "label":"Beschriftung des \"Start\"-Buttons",
+          "default":"Start"
+        },
+        {
+          "label":"Beschriftung des \"Beenden\"-Buttons",
+          "default":"Wiederholen"
+        },
+        {
+          "label":"Text für die Nummer des Schaubilds",
+          "description":"Gibt das aktuelle Schaubild und die Gesamtzahl der Schaubilder an, Variablen sind :num und :total",
+          "default":"Schaubild :num von :total"
+        }
+      ]
+    }
+  ]
+}
