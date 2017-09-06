@@ -2,7 +2,7 @@
   "semantics":[
     {
       "label":"Einleitung",
-      "description":"Den Einleitungstext (maximal 100 Zeichen)"
+      "description":"Der Einleitungstext (maximal 100 Zeichen)"
     },
     {
       "label":"Gleichungstyp",
@@ -21,10 +21,10 @@
     },
     {
       "label":"Bruchzahlen verwenden",
-      "description":"Aktivieren, um Brüche in Gleichungen zu erlauben."
+      "description":"Aktivieren, um Brüche in Gleichungen zu generieren."
     },
     {
-      "label":"Maximaler Wert für Berehnungen"
+      "label":"Maximaler Wert für Berechnungen"
     },
     {
       "label":"Maximale Anzahl von Fragen"
@@ -35,6 +35,10 @@
         {
           "label":"Wertung während des Quiz",
           "default":"Ergebnis:"
+        },
+        {
+          "label": "Wertung auf der Ergebnisseite",
+          "default": "Ergebnis: @score / @maxScore"
         },
         {
           "label":"Zeit",
