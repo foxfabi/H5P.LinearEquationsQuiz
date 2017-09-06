@@ -2,6 +2,7 @@ H5P Linear Equation Quiz
 =========================
 
 Linear equation quiz containing basic, intermediate or advanced questions.
+It rely on algebra.js by nicolewhite to build, display, and solve algebraic equations.
 
 ## License
 
