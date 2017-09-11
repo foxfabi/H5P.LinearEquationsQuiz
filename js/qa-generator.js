@@ -49,8 +49,8 @@ H5P.LinearEquationsQuiz.QuestionsGenerator = (function (EquationType) {
       var number = undefined;
       var equation = undefined;
       var solution = undefined;
-      console.log(EquationType);
-      console.log(useFractions);
+      //console.log(EquationType);
+      //console.log(useFractions);
       switch (EquationType) {
         case "basic":
           // [ 3x = 12 ]
@@ -77,13 +77,13 @@ H5P.LinearEquationsQuiz.QuestionsGenerator = (function (EquationType) {
           // [ 4x - 3 = 13 ]
           var operations = ["+", "-", "*"];
           if (useFractions === true) {            
-            number = new Fraction(1, randomNum(2*maxValue));
+            number = new Fraction(3, randomNum(2*maxValue));
           } else {
             number = randomNum(maxValue);
           }
           expr = new Expression(item);         
           expr = randomOperation(operations, expr, maxValue);
-          expr = expr.multiply(randomNum(maxValue));
+          expr = expr.multiply(number);
           expr = randomOperation(operations, expr, maxValue);
           expr = randomOperation(operations, expr, maxValue);
           equation = new Equation(expr, 1 + randomNum(2*maxValue));
@@ -125,10 +125,10 @@ H5P.LinearEquationsQuiz.QuestionsGenerator = (function (EquationType) {
           }          
           break;
       }
-      console.log(".......................");
-      console.log(equation.toString());
+      //console.log(".......................");
+      //console.log(equation.toString());
       //console.log(solution.toString());
-      console.log(".......................");
+      //console.log(".......................");
       if (solution.toString() === "0") {
         // rebuild
         equation = generateEquation(item, EquationType, useFractions);
