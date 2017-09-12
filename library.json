@@ -1,6 +1,6 @@
 {
   "title": "Linear Equations Quiz",
-  "description": "Linear equations quiz containing addition, division, multiplication and subtraction",
+  "description": "Linear equations quiz with customizable questions type and difficulty",
   "majorVersion": 1,
   "minorVersion": 0,
   "patchVersion": 0,
@@ -8,7 +8,7 @@
   "author": "Fabian Dennler (foxfabi)",
   "license": "MIT",
   "machineName": "H5P.LinearEquationsQuiz",
-  "fullscreen": 0,
+  "fullscreen": 1,
   "embedTypes": [
     "iframe"
   ],
