@@ -8,7 +8,7 @@
   "author": "Fabian Dennler (foxfabi)",
   "license": "MIT",
   "machineName": "H5P.LinearEquationsQuiz",
-  "fullscreen": 1,
+  "fullscreen": 0,
   "embedTypes": [
     "iframe"
   ],
